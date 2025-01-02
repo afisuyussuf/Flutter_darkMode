@@ -25,14 +25,17 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Dark Mode',
         theme: theme,
         darkTheme: darkTheme,
-        home: MyHomePage(),
+        home: const MyHomePage(),
       ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
@@ -41,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   dynamic savedThemeMode;
   late String iconAdress;
 
+  @override
   void initState() {
     super.initState();
     getCurrentTheme();
@@ -67,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("widget.title"),
+        title: const Text("widget.title"),
       ),
       body: Center(
         child: Column(
